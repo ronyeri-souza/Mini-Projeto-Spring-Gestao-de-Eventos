@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html  xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Cadastro de Local de Eventos</title>
+
+<link rel="stylesheet" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css}">
+<link th:href="@{https://fonts.googleapis.com/css?family=Anton|Playfair+Display&display=swap}" rel="stylesheet">
+<link rel="stylesheet" href="cadEvento.css">
+</head>
+<body>
+
+<br/><div>
+<h1 id="listalocais-titulo">Lista de Eventos Cadastrados</h1>
+</div>
+<br/>
+<table class="table tables-striped">
+	<tr class="table-secondary">
+		<th>Nome do Local</th>
+		<th>Capacidade</th>
+		<th>Link do Endereço (Google Maps)</th>
+		<th>. . .</th>
+	</tr>
+	<tr th:each="cont : ${localEvento}" class="table-light">
+		<td th:text="${cont.nomeLocal}"></td>
+		<td th:text="${cont.capacidade}"></td>
+		<td th:text="${cont.linkEndereco}"></td>
+		<td>
+		<a class="btn btn-outline-primary" th:href="@{/editLocal(codigo=${cont.codigoLocal})}">Editar</a> &nbsp; &nbsp;
+		<a class="btn btn-outline-danger" th:href="@{/removeLocal(codigo=${cont.codigoLocal})}">Remover</a>
+		</td>
+	</tr>
+</table><br/>
+<div class="form-group form-md-6">
+<a class="btn btn-outline-primary" th:href="@{/cadLocal}">Adicionar Novo Local de Evento</a> &nbsp;
+<a class="btn btn-outline-primary" th:href="@{/ind}">Menu Principal</a>
+</div>
+
+</body>
+</html>

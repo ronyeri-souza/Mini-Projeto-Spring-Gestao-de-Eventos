@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html  xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Gerência de Eventos</title>
+
+<link rel="stylesheet" href="cadEvento.css">
+<link rel="stylesheet" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css}">
+<link th:href="@{https://fonts.googleapis.com/css?family=Anton|Playfair+Display&display=swap}" rel="stylesheet">
+</head>
+
+<body>
+<h1 id="index-titulo-h1">Gerência de Eventos</h1><br><br>
+
+<h2 id="index-menu-convidados-h2">Menu de Convidados:</h2>
+<div class="btn-group-vertical">
+<a class="btn btn-outline-primary" th:href="@{/cad}">Cadastrar Convidados</a><br>
+<a class="btn btn-outline-primary" th:href="@{/alt}">Alterar Dados</a><br>
+<a class="btn btn-outline-primary" th:href="@{/rec}">Recuperar Senha</a><br>
+<a class="btn btn-outline-primary" th:href="@{/rem}">Remover Senha</a><br>
+<a class="btn btn-outline-primary" th:href="@{/list}">Listar Senhas</a><br><br>
+</div>
+
+<h2 id="index-menu-eventos-h2">Menu de Eventos: </h2>
+
+<div class="btn-group-vertical">
+<a  class="btn btn-outline-primary" th:href="@{/eventos}">Eventos Cadastrados</a><br>
+<a  class="btn btn-outline-primary" th:href="@{/novoevento}">Cadastrar Novo Evento</a><br>
+<a  class="btn btn-outline-primary" th:href="@{/listLocais}">Cadastro de Local de Eventos</a><br/><br/>
+</div>
+
+</body>
+</html>

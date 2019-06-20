@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html  xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Cadastrar Novo Evento</title>
+
+<link rel="stylesheet" href="cadEvento.css">
+<link rel="stylesheet" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css}">
+<link th:href="@{https://fonts.googleapis.com/css?family=Anton|Playfair+Display&display=swap}" rel="stylesheet">
+</head>
+<body>
+<br/>
+<h1 id="cadevento-titulo">Cadastrar Novo Evento</h1>
+
+<form th:action="@{/add}" th:object="${evento}" method="post">
+
+
+<input type="hidden" th:field="*{codigo}"/>
+
+
+<div  class="form-group col-md-6">
+<label>Nome do Evento:</label> <br/>
+<input  class="form-control" type="text" th:field="*{nomeEvento}"/>
+</div><br/>
+
+<div class="form-group col-md-6">
+<label>Descrição do Evento:</label><br/>
+<textarea class="form-control" th:field="*{descEvento}"></textarea>
+</div><br/>
+
+<div  class="form-group col-md-6">
+<label>Data de Realização:</label><br/>
+ <input class="from-control" type="date" th:field="*{dataRealizacao}"/>
+</div><br/>
+
+<div  class="form-group col-md-6">
+<label>Quantidade de Convidados:</label><br/>
+ <input class="form-control" type="number" th:field="*{qtdConvidados}"/>
+</div><br/>
+
+<div  class="form-group col-md-6">
+<label>Nome do Responsável pelo Evento:</label><br/>
+<input class="form-control" type="text" th:field="*{nomeResp}"/>
+</div><br/>
+
+<div  class="form-group col-md-6">
+<label>Telefone do Responsável pelo Evento:</label><br/> 
+<input class="form-control" type="text" th:field="*{foneResp}"/>
+</div><br/>
+
+<div  class="form-group col-md-6">
+<label>Duração do Evento:</label><br/>
+<input class="form-control" type="text" th:field="*{duracao}"/>
+</div><br/>
+
+<div  class="form-group col-md-6">
+<label>Local do Evento:</label><br/>
+<select class="form-control" th:field="*{localEvento}">
+	<option th:each="cat : ${localEvento}" th:value="${cat.codigoLocal}" th:text="${cat.nomeLocal}"></option>
+</select>
+</div><br/>
+
+<div  class="form-group col-md-6">
+<button class="btn btn-outline-success" type="submit">Salvar</button>
+</div>
+
+<div class="alert alert-danger" th:if="${#fields.hasAnyErrors()}">
+	<p th:each="err : ${#fields.allErrors()}" th:text="${err}"></p>
+</div><br/>
+
+</form><br><br>
+<div class="form-group col-md-6">
+<a class="btn btn-outline-primary" th:href="@{/ind}">Menu principal</a>
+<a class="btn btn-outline-primary" th:href="@{/listLocais}">Lista de Locais de Eventos</a>
+</div>
+</body>
+</html>

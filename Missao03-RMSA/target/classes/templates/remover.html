@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Remover Convidados</title>
+
+<link rel="stylesheet" href="cadEvento.css">
+<link rel="stylesheet" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css}">
+<link th:href="@{https://fonts.googleapis.com/css?family=Anton|Playfair+Display&display=swap}" rel="stylesheet">
+
+
+</head>
+<body>
+<h1 th:text="${tituloRem}" id="titulo-remover"></h1><br><br>
+
+<a class="btn btn-outline-primary" th:href="@{/ind}">Voltar à página inicial</a>
+</body>
+</html>

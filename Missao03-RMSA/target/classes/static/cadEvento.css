@@ -1,0 +1,82 @@
+@charset "UTF-8";
+
+#cadevento-titulo{
+	
+	font-family: 'Anton', sans-serif;
+	text-align: center;
+}
+
+#cadlocaleventos-titulo{
+	
+	font-family: 'Anton', sans-serif;
+	text-align:center;
+}
+
+#listalocais-titulo{
+	
+	font-family: 'Anton', sans-serif;
+	text-align:center;
+	
+}
+
+#listaeventos-titulo{
+	
+	font-family: 'Anton', sans-serif;
+	text-align:center;
+}
+
+#index-titulo-h1{
+	
+	
+	font-family: 'Anton', sans-serif;
+	text-align:center;
+}
+
+#index-menu-convidados-h2{
+	
+	
+	font-family: 'Anton', sans-serif;
+
+}
+
+#index-menu-eventos-h2{
+	
+	
+	font-family: 'Anton', sans-serif;
+	
+}
+
+#titulo-alterar{
+	
+	
+	font-family: 'Anton', sans-serif;
+	text-align:center;
+	
+}
+
+#titulo-cadastrar{
+	
+	font-family: 'Anton', sans-serif;
+	text-align:center;
+}
+
+#titulo-listar{
+	
+	font-family: 'Anton', sans-serif;
+	text-align:center;
+	
+}
+
+#titulo-recuperar{
+	
+	font-family: 'Anton', sans-serif;
+	text-align:center;
+	
+	
+}
+
+#titulo-remover{
+	
+	font-family: 'Anton', sans-serif;
+	text-align:center;
+}

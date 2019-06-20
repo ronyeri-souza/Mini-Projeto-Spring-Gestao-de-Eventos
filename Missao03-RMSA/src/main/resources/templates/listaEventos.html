@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html  xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Eventos Cadastrados</title>
+
+
+<link rel="stylesheet" href="cadEvento.css">
+<link rel="stylesheet" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css}">
+<link th:href="@{https://fonts.googleapis.com/css?family=Anton|Playfair+Display&display=swap}" rel="stylesheet">
+</head>
+
+<body>
+<br/><div>
+<h1 id="listaeventos-titulo">Eventos Cadastrados</h1>
+</div>
+<table class="table tables-striped">
+	<tr class="table-secondary">
+		<th>Nome do Evento</th>
+		<th>Data de Realização</th>
+		<th>Nome do Responsável</th>
+		<th>Telefone do Responsável</th>
+		<th>Local do Evento</th>
+		<th>. . . </th>
+	</tr>
+	<tr th:each="cont : ${evento}" class="table-light">
+		<td th:text="${cont.nomeEvento}"></td>
+		<td th:text="${cont.dataRealizacao}"></td>
+		<td th:text="${cont.nomeResp}"></td>
+		<td th:text="${cont.foneResp}"></td>
+		<td th:text="${cont.localEvento.nomeLocal}"></td>
+		
+		<td>
+		<a class="btn btn-outline-primary" th:href="@{/exibirEvento(codigo=${cont.codigo})}">Editar</a> &nbsp; &nbsp;
+		<a class="btn btn-outline-danger" th:href="@{/removerEvento(codigo=${cont.codigo})}">Remover</a>
+		</td>
+	</tr>
+</table><br/>
+<div class="form-group form-md-6">
+<a class="btn btn-outline-primary" th:href="@{/ind}">Menu principal</a>
+</div>
+
+</body>
+</html>

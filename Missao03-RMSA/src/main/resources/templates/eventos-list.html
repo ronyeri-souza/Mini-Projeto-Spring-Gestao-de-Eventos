@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Eventos</title>
+<link href="modal.css" rel="stylesheet" />
+<link rel="stylesheet" href="cadEvento.css">
+<link rel="stylesheet" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css}">
+<link th:href="@{https://fonts.googleapis.com/css?family=Anton|Playfair+Display&display=swap}" rel="stylesheet">
+</head>
+<body>
+
+		<!-- Form para pesquisa produto  -->
+		<form th:action="@{/eventos}" method="post">
+			<h3 class="modal-header modal-header-warning">
+				<i class="glyphicon glyphicon-th-list"></i> Lista de Produtos 
+				<span class="pull-right">
+					<input type="text" name="nomePesquisa"
+					id="nomePesquisa" placeholder="Digite um nome"
+					class="btn btn-default btn-sm" />
+					<button type="submit" class="btn btn-default btn-sm">
+						<span class="glyphicon glyphicon-search"></span> Pesquisar
+					</button>
+					</span>
+			</h3>
+		</form>
+
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Nome</th>
+					<th>Data de Realização</th>
+					<th>Nome do Responsável</th>
+					<th>Telefone do Responsável</th>
+					<th>Editar</th>
+					<th>Remover</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="event : ${listaEventos}">
+					<td th:text="${event.nomeEvento}"></td>
+					<td th:text="${event.dataRealizacao}"></td>
+					<td th:text="${event.nomeResp}"></td>
+					<td th:text="${event.foneResp}"></td>
+					<td><a class="btn btn-warning"
+						th:href="|/exibirEvento?id=${event.codigo}|">Editar</a></td>
+					<td><a class="btn btn-warning"
+						th:href="|/removerEvento?id=${event.codigo}|">Remover</a></td>
+				</tr>
+			</tbody>
+		</table>
+		<div>
+			<a class="btn btn-warning" th:href="@{/eventosForm}"> <i
+				class="glyphicon glyphicon-plus"></i> Novo Evento
+			</a>
+		</div>
+	
+
+</body>
+</html>
